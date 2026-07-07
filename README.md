@@ -6,7 +6,7 @@ A content-based Movie Recommendation System built with **Python**, **Streamlit**
 
 ## 🚀 Demo
 
-**Live App:** *(Add your Streamlit deployment link here after deployment)*
+**Live App:** *https://mvrs-oakdev.streamlit.app/*
 
 **GitHub Repository:** *https://github.com/KrishnaTilwane33/movie-recommender-system*
 
