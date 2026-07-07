@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
-
+from dotenv import load_dotenv
+import os
 import pickle
 import requests
 
@@ -22,10 +23,13 @@ def recommend_movies(movie):
 
 
 
-
+load_dotenv()
 def fetch_poster(movie_id):
-    api_key = "5755750c855422d7a459a648406cb852"
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={api_key}&language=en-US"
+    if "TMDB_API_KEY" in st.secrets:
+        API_KEY = st.secrets["TMDB_API_KEY"]
+    else:
+        API_KEY = os.getenv("TMDB_API_KEY")
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
 
     try:
         response = requests.get(url, timeout=5)
