@@ -127,6 +127,7 @@ Workflow:
 ## 📷 Screenshots
 
 Add screenshots of:
+<img width="1085" height="782" alt="image" src="https://github.com/user-attachments/assets/bd8f92d8-8b35-4e15-b3fb-fdae4306e8fb" />
 
 * Home page
 * Movie selection
