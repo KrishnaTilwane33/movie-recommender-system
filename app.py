@@ -25,10 +25,14 @@ def recommend_movies(movie):
 
 load_dotenv()
 def fetch_poster(movie_id):
-    if "TMDB_API_KEY" in st.secrets:
-        API_KEY = st.secrets["TMDB_API_KEY"]
-    else:
-        API_KEY = os.getenv("TMDB_API_KEY")
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+
+        pass
+
+    API_KEY = st.secrets.get("TMDB_API_KEY") or os.getenv("TMDB_API_KEY")
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
 
     try:
