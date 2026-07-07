@@ -29,10 +29,13 @@ def fetch_poster(movie_id):
         from dotenv import load_dotenv
         load_dotenv()
     except ImportError:
-
         pass
 
     API_KEY = st.secrets.get("TMDB_API_KEY") or os.getenv("TMDB_API_KEY")
+
+    if not API_KEY:
+        st.error("TMDB API key not found. Configure it in Streamlit Secrets or your local .env file.")
+        st.stop()
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US"
 
     try:
