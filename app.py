@@ -1,6 +1,6 @@
 import pandas as pd
 import streamlit as st
-from dotenv import load_dotenv
+
 import os
 import pickle
 import requests
@@ -23,7 +23,7 @@ def recommend_movies(movie):
 
 
 
-load_dotenv()
+
 def fetch_poster(movie_id):
     try:
         from dotenv import load_dotenv
